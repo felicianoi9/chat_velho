@@ -1,0 +1,31 @@
+<?php
+
+class homeController extends Controller  {
+
+	private $user;
+
+	public function __construct(){
+		
+
+		$this->user = new Users();
+		if(!$this->user->verifyLogin()){
+			header("Location: ".BASE_URL."login");
+			exit;
+		}else{
+
+		}
+	}
+
+	public function index(){
+		
+
+		$data = array();
+
+
+
+
+		$this->loadTemplate('home',$data);
+		
+
+	}
+}
